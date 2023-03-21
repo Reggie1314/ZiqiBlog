@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ziqi Li">
+<meta name="dcterms.date" content="2023-03-20">
+<meta name="description" content="Final Project">
+
+<title>ZiqiBlog - Fast Fashion blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ZiqiBlog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Fast Fashion blog</h1>
+                  <div>
+        <div class="description">
+          Final Project
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ziqi Li </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 20, 2023</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">March 20, 2023</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="section-1-introduction" class="level1">
+<h1>SECTION 1: INTRODUCTION</h1>
+<p>Fast fashion is a complicated industry that exploits many aspects of human life. In this project, I wish to dissect the Twitter discourse surrounding fast fashion to better understand the environmental, social, and cultural issues associated with the industry. I am specifically interested in how it is entangled with environmentalism, socioeconomic inequality, consumerism, human rights, and fashion culture. My research questions focus on examining how people discuss fast fashion on Twitter through qualitative and quantitative research, such as: 1. What is the discourse surrounding the advocacy and criticism concerning fast fashion? 2. How do American attitudes towards culture, capitalism, and environmentalism influence attitudes towards practices of fast fashion production and consumption?</p>
+</section>
+<section id="section-2-method" class="level1">
+<h1>SECTION 2: METHOD</h1>
+<p>In sourcing my dataset, I used snscrape in Python to scrape tweets from Twitter with the search term “fast fashion”. Utilizing a broad search term such as “fast fashion” allows me to see all facets of the Twitter discourse surrounding the industry. This would enable me to concentrate on both the most and least frequent conversations about my topic. The initial dataset included around 10,000 tweets between January 11, 2023 to February 3, 2023. I replaced empty entries with “NaN” and created a subset with only English tweets to make future analysis easier and reflect American attitudes toward fast fashion. The final version of dataset I used for my project is “fastfashion_cleaned_subset” with 3672 rows and 25 columns.</p>
+<p>For the exploratory analysis, I looked at the dataset’s overall statistics and dig deeper into several meaningful variables. I made use of bar plot, line plot, and pie chart to visualize the distribution of source devices, hashtags, and tweet types, as well as daily count of tweets. These exploratory plots provide a general picture on the dataset and shed light on further study directions.</p>
+<p>The final part of analysis is a series of sentiment analysis on the tweets’ specific emotion and content with nltk packages. I used vader to obtain the compound scores of each tweet and categorized them into positive/negative/neutral word lists according to decided thresholds. Visualization of the distribution of compound scores and sentiment categories motivated me to further investigate the detailed composition of the tweets. Finally, I tokenized each word of each tweet in the dataset, removed the stop word from them, and visualized the top 15 common positive/negative words respectively. This dissected the tweets’ sentiment into central words and allowed me to get a more transparent picture on the most popular sentiments and topics pertinent to fast fashion.</p>
+<div class="cell" data-tags="[&quot;hide_code&quot;]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing all necessary packages for further utilization</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> FreqDist</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment <span class="im">import</span> vader</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> opinion_lexicon</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem.porter <span class="im">import</span> PorterStemmer</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment.vader <span class="im">import</span> SentimentIntensityAnalyzer</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'stopwords'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'vader_lexicon'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'opinion_lexicon'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>UsageError: Line magic function `%%capture` not found.</code></pre>
+</div>
+</div>
+<section id="datasets" class="level3">
+<h3 class="anchored" data-anchor-id="datasets">Datasets</h3>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Since the tweet scraping process takes a large amount of time and may vary in each run, </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I comment out the code for data scraping and data cleaning</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># data cleaning: replace all blank cells with 'NaN'; create a subset with tweets only in English Language</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># the final dataset I used is "fastfashion_cleaned_subset.csv"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#os.system("snscrape --jsonl --max-results 10000 --since 2023-01-11 twitter-search 'fast fashion until:2023-02-04' &gt; fast_fashion.json")</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#tweets_df = pd.read_json('fast_fashion.json', lines=True)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#tweets_df.to_csv (r'fast_fashion.csv', index = None)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#tweets_df[tweets_df == ""] = float("NaN")</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#tweets_df.to_csv (r'fastfashion_cleaned_full.csv', index = None)</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#tweets_df = tweets_df[tweets_df["lang"] == "en"]</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#tweets_df.to_csv (r'fastfashion_cleaned_subset', index = None)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exploratory-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-analysis">Exploratory Analysis</h2>
+<section id="descriptive-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics">1. Descriptive Statistics</h3>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># importing data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fashion <span class="op">=</span> pd.read_csv(<span class="st">"fastfashion_cleaned_subset.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># check the first five rows to get a representative picture of the whole dataset</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>fashion.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>X_type</th>
+      <th>url</th>
+      <th>date</th>
+      <th>rawContent</th>
+      <th>renderedContent</th>
+      <th>id</th>
+      <th>replyCount</th>
+      <th>retweetCount</th>
+      <th>likeCount</th>
+      <th>...</th>
+      <th>source_device</th>
+      <th>sourceLabel</th>
+      <th>retweetedTweet</th>
+      <th>inReplyToTweetId</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>hashtags</th>
+      <th>cashtags</th>
+      <th>viewCount</th>
+      <th>vibe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>snscrape.modules.twitter.Tweet</td>
+      <td>https://twitter.com/Alan_S_Morrison/status/162...</td>
+      <td>2023-02-03 20:31:01+00:00</td>
+      <td>The only reason I can think of for why people ...</td>
+      <td>The only reason I can think of for why people ...</td>
+      <td>1.621607e+18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>Android</td>
+      <td>Twitter for Android</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>['CarColours']</td>
+      <td>NaN</td>
+      <td>49.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>snscrape.modules.twitter.Tweet</td>
+      <td>https://twitter.com/LiveSlowDyeFast/status/162...</td>
+      <td>2023-02-03 20:19:19+00:00</td>
+      <td>The early 2000s has to be the worst period in ...</td>
+      <td>The early 2000s has to be the worst period in ...</td>
+      <td>1.621604e+18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>iPhone</td>
+      <td>Twitter for iPhone</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>snscrape.modules.twitter.Tweet</td>
+      <td>https://twitter.com/FalkAppreciator/status/162...</td>
+      <td>2023-02-03 20:00:05+00:00</td>
+      <td>Deciding to become a Hypebeast. No thoughts. O...</td>
+      <td>Deciding to become a Hypebeast. No thoughts. O...</td>
+      <td>1.621599e+18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>iPhone</td>
+      <td>Twitter for iPhone</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>40.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>snscrape.modules.twitter.Tweet</td>
+      <td>https://twitter.com/otherlindseyy/status/16215...</td>
+      <td>2023-02-03 19:44:32+00:00</td>
+      <td>And as a plus size person, the only places we ...</td>
+      <td>And as a plus size person, the only places we ...</td>
+      <td>1.621596e+18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>Android</td>
+      <td>Twitter for Android</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>snscrape.modules.twitter.Tweet</td>
+      <td>https://twitter.com/Miao993306/status/16215919...</td>
+      <td>2023-02-03 19:30:25+00:00</td>
+      <td>The amount of people defending their over cons...</td>
+      <td>The amount of people defending their over cons...</td>
+      <td>1.621592e+18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>Twitter Web App</td>
+      <td>Twitter Web App</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the dimension of dataset, 3672 rows and 25 columns</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fashion.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>(3672, 25)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Output summary statistics about the dataframe.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fashion.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="54">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>id</th>
+      <th>replyCount</th>
+      <th>retweetCount</th>
+      <th>likeCount</th>
+      <th>quoteCount</th>
+      <th>conversationId</th>
+      <th>retweetedTweet</th>
+      <th>inReplyToTweetId</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>viewCount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3672.000000</td>
+      <td>3.672000e+03</td>
+      <td>3672.000000</td>
+      <td>3672.000000</td>
+      <td>3672.000000</td>
+      <td>3672.000000</td>
+      <td>3.672000e+03</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.000000</td>
+      <td>52.000000</td>
+      <td>3.523000e+03</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1836.500000</td>
+      <td>1.617448e+18</td>
+      <td>1.703976</td>
+      <td>6.086057</td>
+      <td>58.981209</td>
+      <td>1.424020</td>
+      <td>1.617385e+18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-33.926986</td>
+      <td>30.604413</td>
+      <td>9.106750e+03</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1060.159422</td>
+      <td>2.362618e+15</td>
+      <td>45.647129</td>
+      <td>141.657346</td>
+      <td>1640.998705</td>
+      <td>56.305972</td>
+      <td>4.320028e+15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>78.590022</td>
+      <td>22.882305</td>
+      <td>3.512026e+05</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.613136e+18</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.398297e+18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-123.224215</td>
+      <td>-34.358390</td>
+      <td>1.000000e+00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>918.750000</td>
+      <td>1.615620e+18</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.615618e+18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-89.234374</td>
+      <td>18.021426</td>
+      <td>2.800000e+01</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1836.500000</td>
+      <td>1.617418e+18</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.617412e+18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-73.991230</td>
+      <td>34.981266</td>
+      <td>8.800000e+01</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2754.250000</td>
+      <td>1.619348e+18</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>1.619342e+18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.308589</td>
+      <td>49.198540</td>
+      <td>3.210000e+02</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>3672.000000</td>
+      <td>1.621607e+18</td>
+      <td>2682.000000</td>
+      <td>6499.000000</td>
+      <td>78822.000000</td>
+      <td>3257.000000</td>
+      <td>1.621607e+18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>166.533873</td>
+      <td>54.550750</td>
+      <td>2.034971e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="informative-plots" class="level3">
+<h3 class="anchored" data-anchor-id="informative-plots">2. Informative Plots</h3>
+<div class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># count and order the frequency of source devices </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fashion[<span class="st">"source_device"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<pre><code>iPhone                1348
+Twitter Web App        715
+Android                477
+Post Studio            256
+Hootsuite Inc.          87
+                      ... 
+Typeshare.co             1
+DPBeerDashboard          1
+Media uploads app        1
+ContentStudio.io         1
+ted_share_analysis       1
+Name: source_device, Length: 133, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># making a bar plot visualizing the top five devices/platform within the dataset</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> [<span class="st">'iPhone'</span>, <span class="st">'Twitter Web App'</span>, <span class="st">'Android'</span>, <span class="st">'Post Studio'</span>, <span class="st">'Hootsuite Inc.'</span>]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>count_device <span class="op">=</span> [<span class="dv">1348</span>, <span class="dv">715</span>, <span class="dv">477</span>, <span class="dv">256</span>, <span class="dv">87</span>]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>, <span class="st">'orange'</span>, <span class="st">"pink"</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the bar plot showcasing top five devices/platform</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.bar(device, count_device, color <span class="op">=</span> colors)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Counts'</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top Five Devices/Platform'</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation">Interpretation:</h4>
+<p>it gives a hint into what types of people/organizations are participating in the fast fashion discourse. While the top 3 platforms/devices are very predictable, what is interesting is Post Studio and Hootsuite Inc.&nbsp;Given a simple Google search, I found out that these two platforms are essentially social media management platforms that have features such as auto posting. This tells that many companies and organizations such as news outlets are using these tools to share news or articles pertinent to fast fashion. This could mean that the Twitter discourse could be fairly neutral or evenly spread between each sentiment given that both individuals and organizations are present in the discussion.</p>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># making a line plot visualizing the number of tweets posted for each day from January 11, 2023, to February 3, 2023. </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simplify the date to a "Month/Date" version for better interpretation and simplicity of the plot</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>date_simplified <span class="op">=</span> []</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> fashion[<span class="st">"date"</span>]:</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    date_simplified.append(date[<span class="dv">4</span>:<span class="dv">10</span>])</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>fashion[<span class="st">"date_simplified"</span>] <span class="op">=</span> date_simplified</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>date <span class="op">=</span> fashion[<span class="st">"date_simplified"</span>].unique()</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>date_1 <span class="op">=</span> date[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># count the number of tweets posted in each day</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> fashion.groupby(<span class="st">"date_simplified"</span>).size()</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># create a line plot showcasing number of Tweets over time</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">6</span>))</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>ax.plot(date_1, counts)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Counts'</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Number of Tweets over time'</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="interpretation-1" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-1">Interpretation:</h4>
+<p>According to the graph, the highest peak in the number of tweets posted in a day is January 22, 2023 – January 23, 2023. Compared to the average of about 150 new tweets a day, January 22 saw 279 new tweets, and January 23 saw 254, which is about a 75% increase from the average. This could potentially show that something important happened in the area of fast fashion during this period which prompted people to share their original thoughts on Twitter. This can include new information or news being released such as a report detailing how much oil waste fast fashion companies produce. Such trends indicate how the discourse of fast fashion has changed over about a month by looking at catalyzing events.</p>
+<div class="cell" data-execution_count="96">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># making a pie plot visualizing the distribution of tweet types (organic tweets, replies, retweets)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I used the larger dataset for this visualization for a larger sample size</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the counts of organic tweets, replies, and retweets respectively</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>fashion_large <span class="op">=</span> pd.read_csv(<span class="st">"fastfashion_cleaned_full.csv"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>count_reply <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> fashion_large[<span class="st">"inReplyToTweetId"</span>]:</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> math.isnan(i):</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        count_reply <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>count_organic <span class="op">=</span> <span class="dv">10025</span> <span class="op">-</span> count_reply</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>count_retweet <span class="op">=</span> fashion_large[<span class="st">"retweetCount"</span>].<span class="bu">sum</span>()</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>tweets_type <span class="op">=</span> [<span class="st">'organic tweets'</span>, <span class="st">'replies'</span>, <span class="st">'retweets'</span>]</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>tweets_type_counts <span class="op">=</span> [count_organic, count_reply, count_retweet]</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the pie plot showcasing relative proportions of tweet type</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>plt.pie(tweets_type_counts, labels <span class="op">=</span> tweets_type)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Tweet type distribution'</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="interpretation-2" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-2">Interpretation:</h4>
+<p>Majority of the tweets are of the retweet type, whereas organic tweets and replies only constituted low percentages of the data. This suggests that the fast fashion topics are mostly resonating with people in the Twitter community and that they find it valuable enough to share. On the other hand, the low percentage of organic tweets and replies indicate a lack of original content that can spark conversations and engagement among the audiences. Much of the discourse surrounding fast fashion does not consist of individuals voicing their personal opinions.</p>
+<p>This finding might provide insights to answer my research question on the dynamics of American attitudes toward the practices of fast fashion. High retweets typically indicate rising awareness, but there isn’t a lot of action being taken, and there are not enough people caring enough to take the time and express their own opinions. Moreover, the same narratives recirculating on Twitter may lead to unoriginal discourse and the spread of misinformation. This can happen in several ways, such as when users retweet or share the same posts without adding their own perspectives or insights or taking the original tweet out of context. Additionally, users may share the same articles, news stories, or opinion pieces, which can lead to a repetitive conversation on a particular topic in fast fashion. It can limit the diversity of perspectives and ideas that are being shared and the potential for new insights or creative solutions to be discovered.</p>
+<div class="cell" data-execution_count="97">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># count and order the frequency of hashtags, showing firt five </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>fashion[<span class="st">"hashtags"</span>].value_counts()[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="97">
+<pre><code>['fashion', 'women', 'men', 'beauty', 'model', 'design', 'art', 'Valentine', 'fallstores']    85
+['plussize', 'fashion', 'curves', 'curvy', 'style', 'inspo']                                  35
+['fashion', 'women', 'men', 'beauty', 'model', 'design', 'art', 'Christmas', 'fallstores']    22
+['streetwear', 'fashion']                                                                     14
+['fastfashion']                                                                               13
+Name: hashtags, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="98">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># making a pie plot of the top five frequent hashtags</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>hashtag_type <span class="op">=</span> [<span class="st">'[fashion, women, men,...Valentine]'</span>, <span class="st">'[plussize, fashion, curves,...]'</span>, <span class="st">'[fashion, women, men,...Christmas]'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">'[streetwear, fashion]'</span>,  <span class="st">'[fastfashion]'</span>]</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>hashtag_type_counts <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">35</span>, <span class="dv">22</span>, <span class="dv">14</span>, <span class="dv">13</span>]</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plt.pie(hashtag_type_counts, labels <span class="op">=</span> hashtag_type)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Tweet hashtag distribution'</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="interpretation-3" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-3">Interpretation:</h4>
+<p>By looking at the most frequent hashtags, I observed that the most related topics to fast fashion turned out to be “Valentine,” “curves,” “streetwear,” “beauty,” etc.. This provides a clearer picture on how people view and reference to fast fashion, such that there are more references to fast fashion’s related festivals, styles, and customers than references to its environmental or ethical issues. However, hashtags cannot completely reflect the content of the tweets themself, since they only provide a convenient reference to certain topics. Therefore, in the next section, I will conduct more in-depth sentiment analysis on the raw content of tweets to obtain more insights.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="section-3-sentiment-analysis-results" class="level1">
+<h1>SECTION 3: SENTIMENT ANALYSIS &amp; RESULTS</h1>
+<p>Since the compound score is a numerical value between -1 and 1, where -1 indicates a strongly negative sentiment, 0 indicates a neutral sentiment, and 1 indicates a strongly positive sentiment. Thus, I decided the thresholds of 0.5 and -0.5 for categorizing positive/negative sentiments, and the tweets with compounds between -0.5 and 0.5 will be categorized as neutral. The reason I picked 0.5/-0.5 instead of 0 as the thresholds is to provide a range for the fluctuation of emotion of the relatively neutral tweets. Only relatively polarized sentiments will be categorized into positive/negative.</p>
+<div class="cell" data-execution_count="100">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creat empty lists to store the compound scores and sentiment type respectively</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sentiment <span class="op">=</span> []</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>sentiment_type <span class="op">=</span> []</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>analyzer <span class="op">=</span> SentimentIntensityAnalyzer()</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># for loop to categorize the tweets according to sentiment</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> text <span class="kw">in</span> fashion[<span class="st">'rawContent'</span>]:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    scores <span class="op">=</span> analyzer.polarity_scores(text)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> scores[<span class="st">'compound'</span>] <span class="op">&gt;</span> <span class="fl">0.5</span>:</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>        sentiment_type.append(<span class="st">"positive"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> scores[<span class="st">'compound'</span>] <span class="op">&lt;</span> <span class="op">-</span><span class="fl">0.5</span>:</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        sentiment_type.append(<span class="st">"negative"</span>)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        sentiment_type.append(<span class="st">"neutral"</span>)     </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    sentiment.append(scores[<span class="st">'compound'</span>])</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># add new variables into the dataset</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>fashion[<span class="st">'compound'</span>] <span class="op">=</span> sentiment</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>fashion[<span class="st">'sentiment'</span>] <span class="op">=</span> sentiment_type</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="101">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># making a histogram visualizing the distribution of compound scores</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>fashion[<span class="st">'compound'</span>].plot(kind <span class="op">=</span> <span class="st">"hist"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Compound'</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Counts'</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Fast Fashion Tweets Compound Score'</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="interpretation-4" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-4">Interpretation:</h4>
+<p>From the plot, the majority of the sentiment centered between 0 and 0.15, implying that most neutral tweets are slightly skewed towards positive. There are more positive tweets than negative at all scales, while the sentiments are slightly polarized around the thresholds.</p>
+<div class="cell" data-execution_count="102">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># count and order the sentiment categories</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>fashion[<span class="st">'sentiment'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="102">
+<pre><code>neutral     2265
+positive     888
+negative     519
+Name: sentiment, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="149">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># making a bar plot visualizing tweet sentiment categories' distribution</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>sentiment <span class="op">=</span> [<span class="st">'Neutral'</span>, <span class="st">'Positive'</span>, <span class="st">'Negative'</span>]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>sentiment_count <span class="op">=</span> [<span class="dv">2265</span>, <span class="dv">888</span>, <span class="dv">519</span>]</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'orange'</span>, <span class="st">'blue'</span>, <span class="st">"pink"</span>]</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.bar(sentiment, sentiment_count, color <span class="op">=</span> colors)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Counts'</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Tweet Sentiment Distribution'</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="156">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># making a pie plot visualizing tweet sentiment categories proportions</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>plt.pie(sentiment_count, labels <span class="op">=</span> sentiment)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Tweet Sentiment distribution'</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-17-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="interpretation-5" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-5">Interpretation</h4>
+<p>From both the bar chart and the pie chart, we can see that there are more positive tweets than negative tweets toward fast fashion, and the number of neutral-sentiment tweets is the highest. This is against my initial belief such that the predominant sentiment will be negative due to the primary discourse surrounding the criticism on fast fashion’s environmental degradation and waste. Therefore, it will be interesting to investigate deeper into the tweets’ words to see what the discourse and details surrounding the advocacy concerning fast fashion are.</p>
+<div class="cell" data-execution_count="103">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create empty lists storing all positive and negative words appearing in all tweets</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>positive_words <span class="op">=</span> []</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>negative_words <span class="op">=</span> []</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> stopwords.words(<span class="st">'english'</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># tokenize all the words in each tweet </span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># add them into positive/negative word lists according to their compound scores</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> text <span class="kw">in</span> fashion[<span class="st">'rawContent'</span>]:</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_tokenize(text):</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        score <span class="op">=</span> analyzer.polarity_scores(word)[<span class="st">'compound'</span>]</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>            positive_words.append(word)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> score <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>            negative_words.append(word)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># remove stop words </span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>negative_words_nostop <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> negative_words <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> stop_words]</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>positive_words_nostop <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> positive_words <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> stop_words]</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="co"># store the frequencies of positive/negative words</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>negative_words_fd_nostop <span class="op">=</span> FreqDist(negative_words_nostop)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>positive_words_fd_nostop <span class="op">=</span> FreqDist(positive_words_nostop)</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co"># obtain the top 15 most frequent positive/negative words</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>most_common_negative_nostop <span class="op">=</span> negative_words_fd_nostop.most_common(<span class="dv">15</span>)</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>most_common_positive_nostop <span class="op">=</span> positive_words_fd_nostop.most_common(<span class="dv">15</span>)</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="co"># make two bar plots visualizing the top 15 most frequent positive/negative words (stop words removed)</span></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">6</span>))</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>ax2.barh([word <span class="cf">for</span> (word, count) <span class="kw">in</span> most_common_positive_nostop], [count <span class="cf">for</span> (word, count) <span class="kw">in</span> most_common_positive_nostop], color<span class="op">=</span><span class="st">'pink'</span>)</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'15 Most Common Positive Words in Fast Fashion Tweet'</span>)</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">"Counts"</span>)</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>ax2.invert_yaxis()</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>ax1.barh([word <span class="cf">for</span> (word, count) <span class="kw">in</span> most_common_negative_nostop], [count <span class="cf">for</span> (word, count) <span class="kw">in</span> most_common_negative_nostop], color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'15 Most Common Negative Words in Fast Fashion Tweet'</span>)</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">"Counts"</span>)</span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>ax1.invert_yaxis()</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>plt.show() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_blog_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="interpretation-6" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-6">Interpretation:</h4>
+<p>This plot provides a more detailed observation on the fast fashion tweets’ content. In the positive word list, the occurrence of words “beauty,” “fit,” and “friend” complies with the results of hashtag plot aforementioned, which showed that fast fashion discussions are frequently referenced to aesthetic, cloth genres, and festivals. In the negative word list, there are negative words with very bad connotation such as “sh<em>t”, and ”a</em>s”, signifying that people posting negative tweets expressed really extreme hatred within the fast fashion discussion. Importantly, the words ’waste” and “problem” in the negative word list and the word “ethical” in the positive word list both indicate that fast fashion topics pertinent to environmental and ethical issues have been frequently discussed, while the words “poor” and “pay” reflect people’s attitudes towards fast fashion prices and consumption habits.</p>
+<p>These results give insight into my first research question, which aims to explore what people talk about when they discuss fast fashion on Twitter. After looking through the tweets, there is a decent number of people talking about how they’re angry, disgusted, and sad with many fast fashion practices, and some are even afraid of how these brands could be harmful. On the other hand, there are a decent number of tweets that express joy, anticipation, and trust, specifically when referring to recently purchased products or wanting to buy something from certain fast fashion brands. In doing so, people feel anticipation when buying and waiting for a product and joy when they receive the product and wear it for the first time. Thus, the distribution of emotions shows that Twitter discourse around fast fashion is mostly positive and full of anticipation. Many users are voicing their excitement over recently bought clothes or taking fast fashion with a positive twist, such as offering sustainable alternatives or recommending thrifting and re-wearing fast fashion garments to extend their lifespan. It could also mean that much of the discourse on Twitter is actually brands advertising their clothing sales and promotions. On the other hand, negative tweets that are full of criticism or anger at the fast fashion industry are underrepresented in Twitter discourse. These tweets are often extremely critical and repeat the same concerns, such as those advocating for more environmentalism and less consumerist behaviors.</p>
+</section>
+</section>
+<section id="section-4-discussion" class="level1">
+<h1>SECTION 4: DISCUSSION</h1>
+<p>The world is increasingly forced to confront many of the repercussions of human-made decisions, one of which is climate change. American society and culture have contributed to the popularity of fast fashion among consumers who are prone to spending and consuming in excess to keep up with trends. On one hand, corporations exploit human psychological needs to fit in for financial gain. Due to the shortage of craftspeople and manufacturing in the United States, consumers have less awareness about what garments are worth and have become accustomed to inexpensive costs for goods. Consumers neglect to consider the environmental and labor costs associated with mass-produced clothing.</p>
+<p>In the article “Hooking Kids on Fast Fashion,” the author discusses her experience in addressing her child’s desire for fast fashion. The article highlights the negative impact of fast fashion on the environment, labor rights, and consumer culture and how these issues can be difficult to explain to a child who is excited about the latest trends and styles. Many fast fashion brands utilize social media and influencers to reach a wide audience. Among them, children are the most developmentally vulnerable to fitting in with the crowd and gaining social wealth by appearing trendy and fashionable. They also lack a lot of self-regulation when deciding to purchase things for themselves. Therefore, addressing fast fashion with children is one of the challenges pertinent to its influence on American culture, capitalism, and environmentalism. This highlights the importance of promoting sustainable and ethical consumption habits among children and youth and the potential role of social media in facilitating this change. While the high percentage of retweets in the dataset suggests that there is an audience for content related to fast fashion, it also highlights the potential for brands to manipulate this discourse and influence attitudes toward consumption. Therefore, there is a need for more organic discussion promoting sustainable and ethical consumption habits, which can provide a counter-narrative to the dominant discourse around fast fashion and encourage more critical thinking among young consumers. By raising awareness and promoting alternative perspectives, social media discourse can play an important role in shaping attitudes toward consumption and promoting more sustainable and ethical practices.</p>
+<p>The significance of this research on the Twitter discourse regarding fast fashion is that it highlights the impact that the industry has on both individuals and our environment. It aims to inform readers both on the positive and the negative consequences of fast fashion’s surge in popularity within our culture, as well as the repercussions of supporting fast fashion. In this age of TikTok hauls with hundreds of dollars worth of clothing and accessories, I want to encourage people to consume more responsibly and with an awareness of what fast fashion perpetuates in society. I hope that through this analysis of the Twitter discourse surrounding fast fashion, consumers will think more critically about their purchasing habits and decisions. Fast fashion is an industry that facilitates textile waste, pollutes the environment with its synthetic garments, and takes advantage of outsourced labor, yet it is also an industry that seems irrepressible. What we want to emphasize is that this phenomenon is more than just a cultural issue; it is a humanitarian one that affects everyone. While this project is not meant to analyze fast fashion as a whole but rather its discourse on Twitter, we hope that the social media data and sentiment analysis will better inform active players in the fast fashion real such as clothing brands. Through this revelation of sentiments and discourse, we hope to bridge the understanding of fast fashion from multiple perspectives.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
